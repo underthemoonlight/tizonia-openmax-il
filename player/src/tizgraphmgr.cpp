@@ -198,6 +198,12 @@ graphmgr::mgr::print_playlist ()
 }
 
 OMX_ERRORTYPE
+graphmgr::mgr::add_playlist ()
+{
+  return post_cmd (new graphmgr::cmd (graphmgr::add_plist_evt ()));
+}
+
+OMX_ERRORTYPE
 graphmgr::mgr::fwd ()
 {
   return post_cmd (new graphmgr::cmd (graphmgr::fwd_evt ()));

@@ -496,6 +496,7 @@ namespace tiz
                                                                                                             tg::do_start_progress_display >
                                                                                                           >                                                        >,
         bmf::Row < tg::executing                , tg::prnt_plist_evt        , bmf::none               , tg::do_print_playlist                                      >,
+        bmf::Row < tg::executing                , tg::add_plist_evt        , bmf::none               , tg::do_add_playlist                                      >,
         bmf::Row < tg::executing                , tg::position_evt          , skipping                , tg::do_store_position       , tg::is_skip_allowed          >,
         bmf::Row < tg::executing                , tg::skip_evt              , skipping                , tg::do_store_skip           , tg::is_skip_allowed          >,
         bmf::Row < tg::executing                , tg::omx_eos_evt           , bmf::none               , tg::do_skip                 , tg::is_last_eos              >,

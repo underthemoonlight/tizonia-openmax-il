@@ -264,6 +264,12 @@ void graphmgr::ops::do_print_playlist ()
                           "Unable to print the playlist.");
 }
 
+void graphmgr::ops::do_add_playlist ()
+{
+  GMGR_OPS_BAIL_IF_ERROR (p_managed_graph_, p_managed_graph_->add_playlist (),
+                          "Unable to add the playlist.");
+}
+
 void graphmgr::ops::do_fwd ()
 {
   // TODO:

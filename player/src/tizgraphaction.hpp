@@ -472,6 +472,19 @@ namespace tiz
       }
     };
 
+    struct do_add_playlist
+    {
+      template < class FSM, class EVT, class SourceState, class TargetState >
+      void operator()(EVT const&, FSM& fsm, SourceState&, TargetState&)
+      {
+        G_ACTION_LOG ();
+        if (fsm.pp_ops_ && *(fsm.pp_ops_))
+          {
+            (*(fsm.pp_ops_))->do_add_playlist ();
+          }
+      }
+    };
+
     struct do_store_position
     {
       template < class FSM, class EVT, class SourceState, class TargetState >

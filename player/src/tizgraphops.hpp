@@ -135,6 +135,7 @@ namespace tiz
       virtual void do_seek ();
       virtual void do_skip ();
       virtual void do_print_playlist ();
+      virtual void do_add_playlist ();
       virtual void do_store_position (const int pos);
       virtual void do_store_skip (const int jump);
       virtual void do_volume_step (const int step);

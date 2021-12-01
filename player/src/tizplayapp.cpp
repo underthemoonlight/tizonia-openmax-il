@@ -459,6 +459,11 @@ namespace
               mgr_ptr->volume_step (1);
               playlist_position = 0;
               break;
+              
+            case 'a':
+              mgr_ptr->add_playlist();
+              playlist_position = 0;
+              break;
 
             default:
               // printf ("%d - not implemented\n", ch[0]);

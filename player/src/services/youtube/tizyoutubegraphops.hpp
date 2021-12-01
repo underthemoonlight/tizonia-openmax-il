@@ -53,7 +53,7 @@ namespace tiz
       void do_retrieve_metadata ();
       void do_store_config (const tizgraphconfig_ptr_t &config);
       void do_print_playlist ();
-
+      void do_add_playlist ();  
       bool is_fatal_error (const OMX_ERRORTYPE error) const;
       void do_record_fatal_error (const OMX_HANDLETYPE handle,
                                   const OMX_ERRORTYPE error,

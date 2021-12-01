@@ -1653,6 +1653,27 @@ class tizspotifyproxy(object):
             logging.info("Could not retrieve the track uri!")
             raise
 
+    def add_track_to_playlist(self, arg):
+        arg_dec = arg
+
+        sp = spotipy.Spotify(auth_manager=SpotifyOAuth(scope=scope))
+        print_msg(
+            "[Spotify] [Playlist search] '{0}' (owner: {1}).".format(arg_dec, self.user)
+        )
+        try:
+            sp.playlist_add_items(self.enqueue_user_recent_tracks(self), self.current_track_uri(self))
+            print_msg(
+                "[Spotify] [Add Track to Playlist] '{0}' (owner: {1}).".format(arg_dec, self.user)
+            )
+
+        except (ValueError):
+            raise ValueError(
+                str(
+                    "Playlist not found or no audio tracks in playlist : %s"
+                    % to_ascii(arg_dec)
+                )
+            )
+
     def _add_to_playback_queue(self, track):
         """ Add to the playback queue. """
 

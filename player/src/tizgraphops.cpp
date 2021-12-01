@@ -471,6 +471,11 @@ void graph::ops::do_print_playlist ()
   playlist_->print_contents ();
 }
 
+void graph::ops::do_add_playlist ()
+{
+  p_graph_, playlist_->add_track_to_playlist ();
+}
+
 void graph::ops::do_store_position (const int pos)
 {
   if (pos >= 0 || pos < playlist_->size ())

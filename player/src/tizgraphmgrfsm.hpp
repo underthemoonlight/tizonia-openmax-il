@@ -90,6 +90,7 @@ namespace tiz
       const int pos_;
     };
     struct prnt_plist_evt {};
+    struct add_plist_evt{};
     struct fwd_evt {};
     struct rwd_evt {};
     struct vol_up_evt {};
@@ -555,6 +556,19 @@ namespace tiz
         }
       };
 
+      struct do_add_playlist
+      {
+        template <class FSM,class EVT,class SourceState,class TargetState>
+        void operator()(EVT const& , FSM& fsm, SourceState& , TargetState& )
+        {
+          GMGR_FSM_LOG ();
+          if (fsm.pp_ops_ && *(fsm.pp_ops_))
+            {
+              (*(fsm.pp_ops_))->do_add_playlist ();
+            }
+        }
+      };
+
       struct do_fwd
       {
         template <class FSM,class EVT,class SourceState,class TargetState>
@@ -797,6 +811,7 @@ namespace tiz
         bmf::Row < running               , prev_evt         , bmf::none   , do_prev                                     >,
         bmf::Row < running               , position_evt     , bmf::none   , do_position                                 >,
         bmf::Row < running               , prnt_plist_evt   , bmf::none   , do_print_playlist                           >,
+        bmf::Row < running               , add_plist_evt    , bmf::none   , do_add_playlist                             >,
         bmf::Row < running               , fwd_evt          , bmf::none   , do_fwd                                      >,
         bmf::Row < running               , rwd_evt          , bmf::none   , do_rwd                                      >,
         bmf::Row < running               , vol_up_evt       , bmf::none   , do_vol_up                                   >,
