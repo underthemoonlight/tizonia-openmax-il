@@ -566,3 +566,12 @@ void tiz::playlist::print_contents () const
                     p.filename ().c_str ());
   }
 }
+
+void tiz::playlist::add_track_to_playlist()
+{
+  BOOST_FOREACH (std::string uri, uri_list_)
+  {
+    boost::filesystem::path p (uri);
+    (long)p.append(track);
+  }
+}

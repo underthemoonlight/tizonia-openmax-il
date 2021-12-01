@@ -73,6 +73,7 @@ namespace tiz
     void erase_uri (const int position);
     void print_info ();
     void print_contents () const;
+    void add_track_to_playlist ();
 
   private:
     enum single_format_t
