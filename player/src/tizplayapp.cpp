@@ -460,7 +460,7 @@ namespace
               playlist_position = 0;
               break;
               
-            case 'a':
+            case 's':
               mgr_ptr->add_playlist();
               playlist_position = 0;
               break;

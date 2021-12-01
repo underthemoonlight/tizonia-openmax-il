@@ -28,4 +28,5 @@ EXAMPLES
       [l] print playlist.
       [?] keyboard help.
       [space] pause playback.
+      [s] add this track to playlist.
       [q] quit.

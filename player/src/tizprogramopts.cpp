@@ -633,6 +633,7 @@ void tiz::programopts::print_usage_keyboard () const
   printf ("   [?] keyboard help.\n");
   printf ("   [space] pause playback.\n");
   printf ("   [q] quit.\n");
+  printf ("   [s] add this track to playlist.\n");
   printf ("\n");
 }
 
